@@ -1,0 +1,40 @@
+#include <iostream>
+#include <string>
+using namespace std;
+class Pallindrome
+{
+public:
+    bool isPalindrome(int x)
+    {
+        int rev = 0, temp = x, rem = 0;
+        if (x < 0)
+        {
+            cout << "false" << endl;
+            return 0;
+        }
+        while (temp != 0)
+        {
+            rem = temp % 10;
+            rev = (rev * 10) + rem;
+            temp = temp / 10;
+        }
+        if (x == rev)
+        {
+            cout << "true" << endl;
+            return 1;
+        }
+        else
+        {
+            cout << "false" << endl;
+            return 0;
+        }
+    }
+};
+int main(int argc, char const *argv[])
+{
+    Pallindrome num1;
+    num1.isPalindrome(121);
+    num1.isPalindrome(-121);
+    num1.isPalindrome(1234);
+    return 0;
+}
